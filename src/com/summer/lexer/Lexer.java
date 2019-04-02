@@ -1,17 +1,19 @@
 package com.summer.lexer;
 
-import com.summer.*;
-
 public class Lexer {
 
-    String source;
+    String sourceFileString;
     private Token[] token;
 
-    public Lexer(String source) {
-        this.source = source;
+    public Lexer(String sourceFileString) {
+        this.sourceFileString = sourceFileString;
     }
 
     public Token[] createArray(){
+
+        Context context = new Context();
+        context.setLexerState(new InitState());
+        context.identifierKeyword();
 
         return token;
     }

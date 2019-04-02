@@ -8,15 +8,15 @@ import com.summer.lexer.Lexer;
 
 public class Summer {
     public static void main(String[] args) {
-        String content = "";
+        String sourceFileString = "";
         try {
-            content = Util.readFile("test.sum");
+            sourceFileString = Util.readFile("test.sum");
         } catch (IOException e) {
             Logger.getGlobal().info(e.toString());
         }
 
         SymbolMap symbolMap = new SymbolMap();
 
-        Lexer l = new Lexer(content);
+        Lexer l = new Lexer(sourceFileString);
     }
 }
