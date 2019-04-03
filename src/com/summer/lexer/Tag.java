@@ -8,7 +8,7 @@ public enum Tag {
 
     // Keyword
 
-    FOR, WHILE,
+    KEYWORD,
 
     // Operate
 

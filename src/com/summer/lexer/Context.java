@@ -1,5 +1,8 @@
 package com.summer.lexer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Context {
     public final static InitState initState = new InitState();
     public final static IdentifierKeywordState indentifierKeywordState = new IdentifierKeywordState();
@@ -10,6 +13,13 @@ public class Context {
     public final static EndState endState = new EndState();
 
     private LexerState lexerState;
+    private String tempString = "";
+    private char tempChar;
+    private List<Token> tokenList;
+
+    public void Context() {
+        tokenList = new ArrayList<Token>();
+    }
 
     public LexerState getLexerState() {
         return lexerState;
@@ -48,4 +58,35 @@ public class Context {
     public void end() {
         this.lexerState.end();
     };
+
+    public String getTempString() {
+        return tempString;
+    }
+
+    public void setTempString(String tempString) {
+        this.tempString = tempString;
+    }
+
+    public char getTempChar() {
+        return tempChar;
+    }
+
+    public void setTempChar(char tempChar) {
+        this.tempChar = tempChar;
+    }
+
+    public void setTokenList(List<Token> tokenList) {
+        this.tokenList = tokenList;
+    }
+
+    public List<Token> getTokenList() {
+        return tokenList;
+    }
+
+    @Override
+    public String toString() {
+        return "Context{" +
+                "lexerState=" + lexerState +
+                '}';
+    }
 }

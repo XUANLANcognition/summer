@@ -18,5 +18,6 @@ public class Summer {
         SymbolMap symbolMap = new SymbolMap();
 
         Lexer l = new Lexer(sourceFileString);
+        System.out.println("**************\n" + l.lexering());
     }
 }
