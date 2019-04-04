@@ -7,4 +7,11 @@ public class Token {
     public Token(Tag tag) {
         this.tag = tag;
     }
+
+    @Override
+    public String toString() {
+        return "Token{" +
+                "tag=" + tag +
+                "}\n";
+    }
 }

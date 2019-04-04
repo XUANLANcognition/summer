@@ -3,7 +3,6 @@ package com.summer.lexer;
 import com.summer.util.*;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 public class Lexer {
 
@@ -37,7 +36,6 @@ public class Lexer {
             if (Util.charIsOperate(sourceFileString.charAt(i))) {
                 context.operate();
             }
-
         }
 
         context.end();
@@ -45,4 +43,10 @@ public class Lexer {
         return context.getTokenList();
     }
 
+    @Override
+    public String toString() {
+        return "Lexer{" +
+                "sourceFileString='" + sourceFileString + '\'' +
+                '}';
+    }
 }

@@ -25,6 +25,12 @@ public class NumberState extends LexerState {
     @Override
     public void space() {
         System.out.println("number\t" + this.context.getTempString());
+        if (this.getTempString().contains(".")) {
+            this.getTokenList().add(new Float(Tag.FLOAT, Double.parseDouble(this.getTempString())));
+        }
+        else {
+            this.getTokenList().add(new Integer(Tag.INTEGER, java.lang.Integer.parseInt(this.getTempString())));
+        }
         this.context.setTempString("");
         this.context.setLexerState(Context.spaceState);
     }
@@ -32,6 +38,12 @@ public class NumberState extends LexerState {
     @Override
     public void operate() {
         System.out.println("number\t" + this.context.getTempString());
+        if (this.getTempString().contains(".")) {
+            this.getTokenList().add(new Float(Tag.FLOAT, Double.parseDouble(this.getTempString())));
+        }
+        else {
+            this.getTokenList().add(new Integer(Tag.INTEGER, java.lang.Integer.parseInt(this.getTempString())));
+        }
         this.context.setTempString("");
         this.context.setLexerState(Context.operateState);
         this.setTempString(this.getTempString() + this.getTempChar());
@@ -40,6 +52,12 @@ public class NumberState extends LexerState {
     @Override
     public void end() {
         System.out.println("number\t" + this.context.getTempString());
+        if (this.getTempString().contains(".")) {
+            this.getTokenList().add(new Float(Tag.FLOAT, Double.parseDouble(this.getTempString())));
+        }
+        else {
+            this.getTokenList().add(new Integer(Tag.INTEGER, java.lang.Integer.parseInt(this.getTempString())));
+        }
         this.context.setTempString("");
         this.context.setLexerState(Context.endState);
     }

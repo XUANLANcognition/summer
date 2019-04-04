@@ -1,7 +1,10 @@
 package com.summer.util;
 
+import com.summer.lexer.Tag;
+import com.summer.lexer.Token;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
+import javax.swing.text.html.HTML;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -39,5 +42,35 @@ public class Util {
             return Boolean.TRUE;
         else
             return Boolean.FALSE;
+    }
+
+    public static Token keywordToken(String s) {
+        switch (s) {
+            case "(":
+                return new Token(Tag.OPEN_BRACE);
+            case ")":
+                return new Token(Tag.CLOSE_BRACE);
+            case "{":
+                return new Token(Tag.OPEN_PAREN);
+            case  "}":
+                return new Token(Tag.CLOSE_PAREN);
+            case "[":
+                return new Token(Tag.OPEN_BRACKET);
+            case "]":
+                return new Token(Tag.CLOSE_BRACKET);
+            case "+":
+                return new Token(Tag.ADD);
+            case "-":
+                return new Token(Tag.MINUS);
+            case "*":
+                return new Token(Tag.MULTIPLY);
+            case "/":
+                return new Token(Tag.DIVIDE);
+            case "=":
+                return new Token(Tag.EQUAL);
+            case ";":
+                return new Token(Tag.SEMICOLON);
+        }
+        return null;
     }
 }

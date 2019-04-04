@@ -15,10 +15,9 @@ public class Context {
     private LexerState lexerState;
     private String tempString = "";
     private char tempChar;
-    private List<Token> tokenList;
+    private List<Token> tokenList = new ArrayList<Token>();
 
     public void Context() {
-        tokenList = new ArrayList<Token>();
     }
 
     public LexerState getLexerState() {

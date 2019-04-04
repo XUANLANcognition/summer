@@ -1,5 +1,6 @@
 package com.summer.lexer;
 
+import com.summer.Symbol;
 import com.summer.util.Util;
 
 import java.util.logging.Logger;
@@ -28,10 +29,12 @@ public class IdentifierKeywordState extends LexerState {
     @Override
     public void space() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
+            this.getTokenList().add(new Token(Tag.KEYWORD));
             System.out.print("keyword\t");
             System.out.println(this.context.getTempString());
         }
         else {
+            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString())));
             System.out.print("identifier\t");
             System.out.println(this.context.getTempString());
         }
@@ -42,10 +45,12 @@ public class IdentifierKeywordState extends LexerState {
     @Override
     public void operate() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
+            this.getTokenList().add(new Token(Tag.KEYWORD));
             System.out.print("keyword\t");
             System.out.println(this.context.getTempString());
         }
         else {
+            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString())));
             System.out.print("identifier\t");
             System.out.println(this.context.getTempString());
         }
@@ -57,10 +62,12 @@ public class IdentifierKeywordState extends LexerState {
     @Override
     public void end() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
+            this.getTokenList().add(new Token(Tag.KEYWORD));
             System.out.print("keyword\t");
             System.out.println(this.context.getTempString());
         }
         else {
+            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString())));
             System.out.print("identifier\t");
             System.out.println(this.context.getTempString());
         }

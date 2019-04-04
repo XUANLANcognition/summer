@@ -12,10 +12,12 @@ public class OperateState extends LexerState {
     @Override
     public void identifierKeyword() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
-            System.out.println("operate\t" + this.context.getTempString());
+            this.getTokenList().add(Util.keywordToken(this.getTempString()));
+            System.out.println("multi-operate\t" + this.context.getTempString());
         }
         else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
+                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
                 System.out.println("operate\t" + this.context.getTempString().charAt(i));
             }
         }
@@ -40,10 +42,12 @@ public class OperateState extends LexerState {
     @Override
     public void space() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
+            this.getTokenList().add(Util.keywordToken(this.getTempString()));
             System.out.println("multi-operate\t" + this.context.getTempString());
         }
         else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
+                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
                 System.out.println("operate\t" + this.context.getTempString().charAt(i));
             }
         }
@@ -59,10 +63,12 @@ public class OperateState extends LexerState {
     @Override
     public void end() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
-            System.out.println("operate\t" + this.context.getTempString());
+            this.getTokenList().add(Util.keywordToken(this.getTempString()));
+            System.out.println("multi-operate\t" + this.context.getTempString());
         }
         else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
+                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
                 System.out.println("operate\t" + this.context.getTempString().charAt(i));
             }
         }

@@ -6,5 +6,8 @@ public class Number extends Token {
         super(tag);
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
