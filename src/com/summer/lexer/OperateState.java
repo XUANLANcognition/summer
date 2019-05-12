@@ -13,11 +13,9 @@ public class OperateState extends LexerState {
     public void identifierKeyword() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
             this.getTokenList().add(Util.keywordToken(this.getTempString()));
-            System.out.println("multi-operate\t" + this.context.getTempString());
         } else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
                 this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
-                System.out.println("operate\t" + this.context.getTempString().charAt(i));
             }
         }
         this.context.setLexerState(Context.indentifierKeywordState);
@@ -42,11 +40,9 @@ public class OperateState extends LexerState {
     public void space() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
             this.getTokenList().add(Util.keywordToken(this.getTempString()));
-            System.out.println("multi-operate\t" + this.context.getTempString());
         } else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
                 this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
-                System.out.println("operate\t" + this.context.getTempString().charAt(i));
             }
         }
         this.context.setTempString("");
@@ -62,11 +58,9 @@ public class OperateState extends LexerState {
     public void end() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
             this.getTokenList().add(Util.keywordToken(this.getTempString()));
-            System.out.println("multi-operate\t" + this.context.getTempString());
         } else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
                 this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
-                System.out.println("operate\t" + this.context.getTempString().charAt(i));
             }
         }
         this.context.setTempString("");

@@ -30,12 +30,8 @@ public class IdentifierKeywordState extends LexerState {
     public void space() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
             this.getTokenList().add(new Token(Tag.KEYWORD));
-            System.out.print("keyword\t");
-            System.out.println(this.context.getTempString());
         } else {
             this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
-            System.out.print("identifier\t");
-            System.out.println(this.context.getTempString());
         }
         this.context.setTempString("");
         this.context.setLexerState(Context.spaceState);
@@ -45,12 +41,8 @@ public class IdentifierKeywordState extends LexerState {
     public void operate() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
             this.getTokenList().add(new Token(Tag.KEYWORD));
-            System.out.print("keyword\t");
-            System.out.println(this.context.getTempString());
         } else {
             this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
-            System.out.print("identifier\t");
-            System.out.println(this.context.getTempString());
         }
         this.context.setLexerState(Context.operateState);
         this.context.setTempString("");
@@ -61,12 +53,8 @@ public class IdentifierKeywordState extends LexerState {
     public void end() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
             this.getTokenList().add(new Token(Tag.KEYWORD));
-            System.out.print("keyword\t");
-            System.out.println(this.context.getTempString());
         } else {
             this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
-            System.out.print("identifier\t");
-            System.out.println(this.context.getTempString());
         }
         this.setTempString("");
         this.context.setLexerState(Context.endState);

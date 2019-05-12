@@ -24,7 +24,6 @@ public class NumberState extends LexerState {
 
     @Override
     public void space() {
-        System.out.println("number\t" + this.context.getTempString());
         if (this.getTempString().contains(".")) {
             this.getTokenList().add(new Float(Tag.FLOAT, Double.parseDouble(this.getTempString())));
         } else {
@@ -36,7 +35,6 @@ public class NumberState extends LexerState {
 
     @Override
     public void operate() {
-        System.out.println("number\t" + this.context.getTempString());
         if (this.getTempString().contains(".")) {
             this.getTokenList().add(new Float(Tag.FLOAT, Double.parseDouble(this.getTempString())));
         } else {
