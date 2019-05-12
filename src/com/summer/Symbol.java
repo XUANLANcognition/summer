@@ -11,6 +11,9 @@ public class Symbol {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Symbol{" +
+                "index=" + index +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

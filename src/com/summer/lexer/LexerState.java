@@ -26,9 +26,13 @@ public abstract class LexerState {
         return this.context.getTempChar();
     }
 
-    public List<Token> getTokenList() { return this.context.getTokenList(); }
+    public List<Token> getTokenList() {
+        return this.context.getTokenList();
+    }
 
-    public void setTokenList(List<Token> tokenList) { this.context.setTokenList(tokenList);}
+    public void setTokenList(List<Token> tokenList) {
+        this.context.setTokenList(tokenList);
+    }
 
     public abstract void init();
 

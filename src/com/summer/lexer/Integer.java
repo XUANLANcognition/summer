@@ -10,8 +10,6 @@ public class Integer extends Number {
 
     @Override
     public String toString() {
-        return "Integer{" +
-                "value=" + value +
-                "}\n";
+        return super.toString() + " : " + value;
     }
 }

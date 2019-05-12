@@ -32,9 +32,8 @@ public class IdentifierKeywordState extends LexerState {
             this.getTokenList().add(new Token(Tag.KEYWORD));
             System.out.print("keyword\t");
             System.out.println(this.context.getTempString());
-        }
-        else {
-            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString())));
+        } else {
+            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
             System.out.print("identifier\t");
             System.out.println(this.context.getTempString());
         }
@@ -48,9 +47,8 @@ public class IdentifierKeywordState extends LexerState {
             this.getTokenList().add(new Token(Tag.KEYWORD));
             System.out.print("keyword\t");
             System.out.println(this.context.getTempString());
-        }
-        else {
-            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString())));
+        } else {
+            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
             System.out.print("identifier\t");
             System.out.println(this.context.getTempString());
         }
@@ -65,9 +63,8 @@ public class IdentifierKeywordState extends LexerState {
             this.getTokenList().add(new Token(Tag.KEYWORD));
             System.out.print("keyword\t");
             System.out.println(this.context.getTempString());
-        }
-        else {
-            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString())));
+        } else {
+            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
             System.out.print("identifier\t");
             System.out.println(this.context.getTempString());
         }

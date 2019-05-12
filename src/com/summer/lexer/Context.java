@@ -32,31 +32,45 @@ public class Context {
 
     public void init() {
         this.lexerState.init();
-    };
+    }
+
+    ;
 
     public void identifierKeyword() {
         this.lexerState.identifierKeyword();
-    };
+    }
+
+    ;
 
     public void number() {
         this.lexerState.number();
-    };
+    }
+
+    ;
 
     public void string() {
         this.lexerState.string();
-    };
+    }
+
+    ;
 
     public void space() {
         this.lexerState.space();
-    };
+    }
+
+    ;
 
     public void operate() {
         this.lexerState.operate();
-    };
+    }
+
+    ;
 
     public void end() {
         this.lexerState.end();
-    };
+    }
+
+    ;
 
     public String getTempString() {
         return tempString;

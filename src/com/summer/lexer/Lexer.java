@@ -1,5 +1,6 @@
 package com.summer.lexer;
 
+import com.summer.SymbolMap;
 import com.summer.util.*;
 
 import java.util.List;
@@ -7,12 +8,14 @@ import java.util.List;
 public class Lexer {
 
     String sourceFileString;
+    SymbolMap symbolMap;
 
-    public Lexer(String sourceFileString) {
+    public Lexer(String sourceFileString, SymbolMap symbolMap) {
         this.sourceFileString = sourceFileString;
+        this.symbolMap = symbolMap;
     }
 
-    public List<Token> lexering(){
+    public List<Token> lexering() {
 
         Context context = new Context();
         context.setLexerState(new InitState());

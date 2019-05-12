@@ -4,12 +4,15 @@ import com.summer.*;
 
 public class Identifier extends Token {
 
-    public Identifier (Tag tag, Symbol s) {
+    String id;
+
+    public Identifier(Tag tag, Symbol s, String id) {
         super(tag);
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return "Identifier{} ==> " + super.toString();
+        return super.toString() + " : " + id;
     }
 }

@@ -27,7 +27,7 @@ public class Util {
     }
 
     public static Boolean stringIsMultiOperate(String s) {
-        if (s.equals("++")  || s.equals("--") || s.equals("<=") || s.equals(">=") || s.equals("==")
+        if (s.equals("++") || s.equals("--") || s.equals("<=") || s.equals(">=") || s.equals("==")
                 || s.equals("!="))
             return Boolean.TRUE;
         else
@@ -52,7 +52,7 @@ public class Util {
                 return new Token(Tag.CLOSE_BRACE);
             case "{":
                 return new Token(Tag.OPEN_PAREN);
-            case  "}":
+            case "}":
                 return new Token(Tag.CLOSE_PAREN);
             case "[":
                 return new Token(Tag.OPEN_BRACKET);
@@ -70,6 +70,8 @@ public class Util {
                 return new Token(Tag.EQUAL);
             case ";":
                 return new Token(Tag.SEMICOLON);
+            case ",":
+                return new Token(Tag.COMMA);
         }
         return null;
     }
