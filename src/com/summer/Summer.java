@@ -27,5 +27,7 @@ public class Summer {
         for (Token i : tokenList) {
             System.out.println(i);
         }
+
+        System.out.println(l.toString());
     }
 }

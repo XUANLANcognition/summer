@@ -26,8 +26,16 @@ public class OperateState extends LexerState {
 
     @Override
     public void number() {
-        this.setTempString(this.getTempString() + this.getTempChar());
+        if (Util.stringIsMultiOperate(this.context.getTempString())) {
+            this.getTokenList().add(Util.keywordToken(this.getTempString()));
+        } else {
+            for (int i = 0; i < this.context.getTempString().length(); i++) {
+                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
+            }
+        }
         this.context.setLexerState(Context.numberState);
+        this.context.setTempString("");
+        this.setTempString(this.getTempString() + this.getTempChar());
     }
 
     @Override

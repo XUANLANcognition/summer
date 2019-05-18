@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Lexer {
 
-    String sourceFileString;
-    SymbolMap symbolMap;
+    private String sourceFileString;
+    private SymbolMap symbolMap;
 
     public Lexer(String sourceFileString, SymbolMap symbolMap) {
         this.sourceFileString = sourceFileString;
@@ -49,7 +49,7 @@ public class Lexer {
     @Override
     public String toString() {
         return "Lexer{" +
-                "sourceFileString='" + sourceFileString + '\'' +
-                '}';
+                "\nsourceFileString:\n" + sourceFileString  +
+                "\n}";
     }
 }
