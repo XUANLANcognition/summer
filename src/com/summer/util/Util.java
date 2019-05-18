@@ -2,9 +2,7 @@ package com.summer.util;
 
 import com.summer.lexer.Tag;
 import com.summer.lexer.Token;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
-import javax.swing.text.html.HTML;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -44,7 +42,7 @@ public class Util {
             return Boolean.FALSE;
     }
 
-    public static Token keywordToken(String s) {
+    public static Token OperateToken(String s) {
         switch (s) {
             case "(":
                 return new Token(Tag.OPEN_BRACE);

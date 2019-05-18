@@ -1,7 +1,6 @@
 package com.summer.lexer;
 
 import com.summer.util.Util;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 public class OperateState extends LexerState {
     @Override
@@ -12,10 +11,10 @@ public class OperateState extends LexerState {
     @Override
     public void identifierKeyword() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
-            this.getTokenList().add(Util.keywordToken(this.getTempString()));
+            this.getTokenList().add(Util.OperateToken(this.getTempString()));
         } else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
-                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
+                this.getTokenList().add(Util.OperateToken(Character.toString(this.getTempString().charAt(i))));
             }
         }
         this.context.setLexerState(Context.indentifierKeywordState);
@@ -27,10 +26,10 @@ public class OperateState extends LexerState {
     @Override
     public void number() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
-            this.getTokenList().add(Util.keywordToken(this.getTempString()));
+            this.getTokenList().add(Util.OperateToken(this.getTempString()));
         } else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
-                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
+                this.getTokenList().add(Util.OperateToken(Character.toString(this.getTempString().charAt(i))));
             }
         }
         this.context.setLexerState(Context.numberState);
@@ -47,10 +46,10 @@ public class OperateState extends LexerState {
     @Override
     public void space() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
-            this.getTokenList().add(Util.keywordToken(this.getTempString()));
+            this.getTokenList().add(Util.OperateToken(this.getTempString()));
         } else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
-                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
+                this.getTokenList().add(Util.OperateToken(Character.toString(this.getTempString().charAt(i))));
             }
         }
         this.context.setTempString("");
@@ -65,10 +64,10 @@ public class OperateState extends LexerState {
     @Override
     public void end() {
         if (Util.stringIsMultiOperate(this.context.getTempString())) {
-            this.getTokenList().add(Util.keywordToken(this.getTempString()));
+            this.getTokenList().add(Util.OperateToken(this.getTempString()));
         } else {
             for (int i = 0; i < this.context.getTempString().length(); i++) {
-                this.getTokenList().add(Util.keywordToken(Character.toString(this.getTempString().charAt(i))));
+                this.getTokenList().add(Util.OperateToken(Character.toString(this.getTempString().charAt(i))));
             }
         }
         this.context.setTempString("");

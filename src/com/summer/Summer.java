@@ -28,6 +28,5 @@ public class Summer {
             System.out.println(i);
         }
 
-        System.out.println(l.toString());
     }
 }
