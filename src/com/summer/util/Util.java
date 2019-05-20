@@ -1,7 +1,8 @@
 package com.summer.util;
 
-import com.summer.lexer.Tag;
 import com.summer.lexer.Token;
+import com.summer.lexer.Type;
+import com.summer.lexer.Word;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,10 +34,18 @@ public class Util {
     }
 
     public static Boolean stringIsKeyword(String s) {
-        if (s.equals("int") || s.equals("float") || s.equals("string")
-                || s.equals("for") || s.equals("do") || s.equals("while")
-                || s.equals("if") || s.equals("else") || s.equals("break")
-                || s.equals("continue") || s.equals("return"))
+        if (s.equals("int") ||
+                s.equals("float") ||
+                s.equals("string") ||
+                s.equals("for") ||
+                s.equals("do") ||
+                s.equals("while") ||
+                s.equals("if") ||
+                s.equals("else") ||
+                s.equals("break") ||
+                s.equals("continue") ||
+                s.equals("return") ||
+                s.equals("bool"))
             return Boolean.TRUE;
         else
             return Boolean.FALSE;
@@ -45,31 +54,49 @@ public class Util {
     public static Token OperateToken(String s) {
         switch (s) {
             case "(":
-                return new Token(Tag.OPEN_BRACE);
+                return Word.openBrace;
             case ")":
-                return new Token(Tag.CLOSE_BRACE);
+                return Word.closeBrace;
             case "{":
-                return new Token(Tag.OPEN_PAREN);
+                return Word.openParen;
             case "}":
-                return new Token(Tag.CLOSE_PAREN);
+                return Word.closeParen;
             case "[":
-                return new Token(Tag.OPEN_BRACKET);
+                return Word.openBracket;
             case "]":
-                return new Token(Tag.CLOSE_BRACKET);
+                return Word.closeBracket;
             case "+":
-                return new Token(Tag.ADD);
+                return Word.and;
             case "-":
-                return new Token(Tag.MINUS);
+                return Word.minus;
             case "*":
-                return new Token(Tag.MULTIPLY);
+                return Word.multiply;
             case "/":
-                return new Token(Tag.DIVIDE);
+                return Word.divide;
             case "=":
-                return new Token(Tag.EQUAL);
+                return Word.equal;
             case ";":
-                return new Token(Tag.SEMICOLON);
+                return Word.semicolon;
             case ",":
-                return new Token(Tag.COMMA);
+                return Word.comma;
+        }
+        return null;
+    }
+
+    public static Token keyWordToken(String s) {
+        switch (s) {
+            case "int":
+                return Type.rInt;
+            case "float":
+                return Type.rFloat;
+            case "bool":
+                return Type.rBool;
+            case  "for":
+                return Word.rFor;
+            case "if":
+                return Word.rIf;
+            case  "while":
+                return Word.rWhile;
         }
         return null;
     }

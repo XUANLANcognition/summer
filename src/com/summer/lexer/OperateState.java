@@ -20,7 +20,6 @@ public class OperateState extends LexerState {
         this.context.setLexerState(Context.indentifierKeywordState);
         this.context.setTempString("");
         this.setTempString(this.getTempString() + this.getTempChar());
-
     }
 
     @Override

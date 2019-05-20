@@ -2,13 +2,13 @@ package com.summer.lexer;
 
 public enum Tag {
 
-    // Identifier
+    // Word
 
     IDENTIFIER,
 
     // Keyword
 
-    KEYWORD,
+    FOR, IF, WHILE, BASIC,
 
     // Operate
 

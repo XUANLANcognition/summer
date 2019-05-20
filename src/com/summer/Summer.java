@@ -1,3 +1,5 @@
+// Everyone comes here to collect!
+
 package com.summer;
 
 import java.io.*;
@@ -11,6 +13,9 @@ import com.summer.lexer.Lexer;
 
 public class Summer {
     public static void main(String[] args) {
+
+        // Read source file into memory.
+
         String sourceFileString = "";
         try {
             sourceFileString = Util.readFile("test.sum");
@@ -18,11 +23,14 @@ public class Summer {
             Logger.getGlobal().info(e.toString());
         }
 
+        // lexer
+
         SymbolMap symbolMap = new SymbolMap();
 
-        List<Token> tokenList = new ArrayList<Token>();
         Lexer l = new Lexer(sourceFileString, symbolMap);
-        tokenList = l.lexering();
+        List<Token> tokenList = l.lexering();
+
+        // Print the list of Token.
 
         for (Token i : tokenList) {
             System.out.println(i);

@@ -1,6 +1,6 @@
 package com.summer.lexer;
 
-public class Integer extends Number {
+public class Integer extends Token {
     private int value;
 
     public Integer(Tag tag, int i) {
@@ -10,6 +10,6 @@ public class Integer extends Number {
 
     @Override
     public String toString() {
-        return super.toString() + " : " + value;
+        return super.toString() + " [value : " + value + "]";
     }
 }

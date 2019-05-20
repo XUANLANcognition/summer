@@ -1,6 +1,6 @@
 package com.summer.lexer;
 
-public class Float extends Number {
+public class Float extends Token {
     private Double value;
 
     public Float(Tag tag, Double d) {

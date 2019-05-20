@@ -29,9 +29,9 @@ public class IdentifierKeywordState extends LexerState {
     @Override
     public void space() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
-            this.getTokenList().add(new Token(Tag.KEYWORD));
+            this.getTokenList().add(Util.keyWordToken(this.getTempString()));
         } else {
-            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
+            this.getTokenList().add(new Word(Tag.IDENTIFIER, this.context.getTempString()));
         }
         this.context.setTempString("");
         this.context.setLexerState(Context.spaceState);
@@ -40,9 +40,9 @@ public class IdentifierKeywordState extends LexerState {
     @Override
     public void operate() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
-            this.getTokenList().add(new Token(Tag.KEYWORD));
+            this.getTokenList().add(Util.keyWordToken(this.getTempString()));
         } else {
-            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
+            this.getTokenList().add(new Word(Tag.IDENTIFIER, this.getTempString()));
         }
         this.context.setLexerState(Context.operateState);
         this.context.setTempString("");
@@ -52,9 +52,9 @@ public class IdentifierKeywordState extends LexerState {
     @Override
     public void end() {
         if (Util.stringIsKeyword(this.context.getTempString())) {
-            this.getTokenList().add(new Token(Tag.KEYWORD));
+            this.getTokenList().add(Util.keyWordToken(this.getTempString()));
         } else {
-            this.getTokenList().add(new Identifier(Tag.IDENTIFIER, new Symbol(1, this.getTempString()), this.context.getTempString()));
+            this.getTokenList().add(new Word(Tag.IDENTIFIER, this.getTempString()));
         }
         this.setTempString("");
         this.context.setLexerState(Context.endState);
